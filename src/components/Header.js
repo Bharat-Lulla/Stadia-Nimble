@@ -7,7 +7,7 @@ export default function Header() {
     { name: "Shop", link: "/shop" },
     { name: "Socials", link: "/socials" },
     { name: "Stadium", link: "/" },
-    { name: "Players", link: "/playersInfo" },
+    // { name: "Players", link: "/playersInfo" },
   ];
   return (
     <div className={styles.header}>

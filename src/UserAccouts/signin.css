@@ -7,14 +7,12 @@
 	font-family: Raleway, sans-serif;
 }
 
-body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
-}
 
 .container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
 	min-height: 100vh;
 }
 

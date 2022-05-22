@@ -8,6 +8,9 @@ import ProtectedRoute from "./UserAccouts/ProtectedRoute";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./components/Shop/Shop";
+import Fixtures from "./Matches/Fixtures";
+import Results from "./Matches/Results";
+import PlayersInfo from "./playersInfo/PlayersInfo";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Route path="/socials" element={<Socials />}></Route>
         <Route path="/shop" element={<ShopPage />}></Route>
         <Route path="/" element={<HomePage />}></Route>
+        <Route path="/upcomingMatches" element={<Fixtures />}></Route>   
+        <Route path="/ongoingMatches" element={<Results />}></Route>
+        <Route path="/playersInfo" element={<PlayersInfo />}></Route>
       </Routes>
     </div>
   );

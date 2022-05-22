@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Fixtures from "./Matches/Fixtures";
 import Results from "./Matches/Results";
+import PlayersInfo from "./playersInfo/PlayersInfo";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/upcomingMatches" element={<Fixtures />}></Route>   
-        <Route path="/ongoingMatches" element={<Results />}></Route>   
+        <Route path="/ongoingMatches" element={<Results />}></Route>
+        <Route path="/playersInfo" element={<PlayersInfo />}></Route>
       </Routes>
     </div>
   );

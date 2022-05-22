@@ -7,6 +7,9 @@ export default function Header() {
     { name: "Shop", link: "/shop" },
     { name: "Socials", link: "/socials" },
     { name: "Stadium", link: "/" },
+    { name: "Upcoming Matches", link: "/upcomingMatches"},
+    { name: "Ongoing Matches", link: "/ongoingMatches"},
+    { name: "player profile", link: "/playersInfo"},
     // { name: "Players", link: "/playersInfo" },
   ];
   return (

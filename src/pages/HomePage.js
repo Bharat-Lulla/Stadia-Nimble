@@ -6,7 +6,10 @@ export default function HomePage() {
   return (
     <div className={styles.home}>
       <div className={styles.bg}>
-        <img src="https://i.ibb.co/1zFGLBc/Wankhede-ICC-WCF.jpg" alt="" />
+        <img
+          src="https://lh3.ggpht.com/p/AF1QipPC2TxhaBy4H6h-kRWNaA_RRg9r_zjEmxyRxUIJ=s1536"
+          alt=""
+        />
       </div>
 
       <Header />

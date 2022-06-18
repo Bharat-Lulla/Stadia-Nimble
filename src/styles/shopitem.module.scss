@@ -1,16 +1,21 @@
 @use "./variables/colors.scss" as *;
 
 .shopitem {
-  width: calc(100% / 3 - 20px);
+  width: 98%;
+  height: 70vh;
   background-color: white;
   border-radius: 12px;
   display: flex;
-  flex-direction: column;
   padding: 20px;
   margin-bottom: 20px;
   img {
     width: 100%;
     object-fit: contain;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .name {
     font-size: 1.5rem;
@@ -36,6 +41,14 @@
         font-size: 1.2rem;
         font-weight: 600;
         text-align: center;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
       }
     }
     .left,

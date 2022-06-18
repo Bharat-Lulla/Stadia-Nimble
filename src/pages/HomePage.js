@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import styles from "../styles/home/home.module.scss";
 import Card from "react-animated-3d-card";
+import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <div className={styles.home}>
@@ -14,11 +15,14 @@ export default function HomePage() {
 
       <Header />
       <div className={styles.main}>
-        <img
-          className={styles.mca}
-          src="https://i.ibb.co/drFRJVp/76318531-1-removebg-preview.png"
-          alt=""
-        />
+        <Link to="/stadium">
+          <img
+            className={styles.mca}
+            src="https://i.ibb.co/drFRJVp/76318531-1-removebg-preview.png"
+            alt=""
+          />
+        </Link>
+
         <div className={styles.banner}>
           <div className={styles.left}>
             <p className={styles.herotext}>Welcome to Wankhede Stadium - MCA</p>
@@ -61,10 +65,12 @@ export default function HomePage() {
             </Card>
           </div>
           <div className={styles.right}>
-            <img
-              src="https://i.ibb.co/swyNW15/wp7454010-removebg-preview.png"
-              alt=""
-            />
+            <Link to="/shop">
+              <img
+                src="https://i.ibb.co/swyNW15/wp7454010-removebg-preview.png"
+                alt=""
+              />
+            </Link>
           </div>
         </div>
       </div>

@@ -1,0 +1,1708 @@
+import React, { useState } from "react";
+import styles from "../styles/shop.module.scss";
+import Header from "../components/Header";
+import ShopItem from "../components/Shop/ShopItem";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { drinks, meals, playerData } from "../playersInfo/rawData";
+import MenuItem from "../components/MenuItem";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import Checkout from "../components/Checkout";
+export default function ShopPage() {
+  const items = ["", "", "", ""];
+  const projectList = [
+    {
+      title: "MI: (Rohit 45) Official Match Jersey 2022",
+      image: "https://i.ibb.co/r2jyZ9F/8907880533999-1-9827.webp",
+      description: `Official MI: Official Match Jersey 2022 (Rohit 45). One Family! The
+        Official Mumbai Indians Collared Jersey is finally here and this is your
+        chance to cheer for the men in blue and gold and join the MI Paltan!
+        Show some love for the boys who are ready to kill it in the IPL once
+        again with their 'Duniya Hila Denge' performance! Wear this Jersey as
+        you cheer for Rohit and the gang!`,
+    },
+    {
+      title: "Featured Artist 3D",
+      image: "https://source.unsplash.com/collection/3573299/",
+      description:
+        "Duis at tellus vitae velit aliquet varius. Fusce luctus libero et ligula tristique lobortis. Vestibulum eu placerat risus, eu semper augue. Integer at purus sit amet elit pretium viverra. Suspendisse id fringilla nibh, nec dictum urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ",
+    },
+    {
+      title: "Interactive AI",
+      image: "https://source.unsplash.com/collection/2276562/",
+      description:
+        "Praesent quis congue nisi. Vivamus dapibus suscipit magna at imperdiet. Maecenas augue tortor, consequat vitae lacus id, pharetra tempor mauris. Suspendisse sodales commodo erat, non imperdiet nisl scelerisque at. Nulla porttitor gravida diam, in ornare ipsum accumsan bibendum. Morbi ut ante metus. Proin rhoncus magna lectus, nec consequat augue ultricies eu.",
+    },
+    {
+      title: "Slices of Sky",
+      image: "https://source.unsplash.com/collection/2203755/",
+      description:
+        "Praesent quis congue nisi. Vivamus dapibus suscipit magna at imperdiet. Mauris consectetur pharetra metus eu suscipit. Maecenas augue tortor, consequat vitae lacus id, pharetra tempor mauris. Suspendisse sodales commodo erat, non imperdiet nisl scelerisque at. Nulla porttitor gravida diam, in ornare ipsum accumsan bibendum. Morbi ut ante metus. ",
+    },
+    {
+      title: "Micro Worlds",
+      image: "https://source.unsplash.com/collection/573009/",
+      description:
+        "Duis at tellus vitae velit aliquet varius. Fusce luctus libero et ligula tristique lobortis. Vestibulum eu placerat risus, eu semper augue. Integer at purus sit amet elit pretium viverra. Suspendisse id fringilla nibh, nec dictum urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ",
+    },
+  ];
+  const [selected, setselected] = useState(1);
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    centerMode: true,
+  };
+  const products = [
+    {
+      id_product_category: "1092",
+      id_catetory: "7",
+      id_product: "113",
+      created_at: "2022-03-08 13:58:23",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "113",
+      parent_id: "0",
+      sku: "8903520732920",
+      name: "MI Signature Baseball Shirt",
+      price: "1399",
+      selling_price: "699",
+      discount: "50",
+      stock_status: "in-stock",
+      quantity: "17",
+      status: "active",
+      breadcrumb: null,
+      visibility: "show",
+      description:
+        "Mumbai Indians have a record number of 5 IPL title wins! Cheer on the reigning champions as they march on to defend their title this season with official Mumbai Indians merchandise exclusively at The Arena. Introducing the Official Replica Merchandise. Wear this and flaunt your love for the Men in Blues!",
+      image:
+        "https://mumbaiindians.gumlet.io/product/8903520732920/300/8903520732920_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "mi-signature-baseball-shirt-8903520732920",
+      meta_title: "MI Signature Baseball Shirt",
+      meta_description: "MI Signature Baseball Shirt",
+      meta_keyword: "MI Signature Baseball Shirt",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/8903520732920/665/8903520732920_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Unisex",
+      fynd_uid: "8082217",
+      group_id: "8082217",
+      fynd_item_code: "MI121MT008",
+      collection_page: "",
+      color_family: "",
+      style_name: "MI Signature Baseball Shirt",
+      product_code: "MI121MT008",
+      material: "Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Top Wear",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "",
+      color: "White",
+      size: "S",
+      fynd_size: "S",
+      best_seller: "",
+      name_of_the_commodity: "Clothing",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "142",
+      available_colors: "White",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        White: {
+          id_product: "113",
+          sku: "8903520732920",
+          color: "White",
+          url_key: "mi-signature-baseball-shirt-8903520732920",
+          configrable_atribute_value: "S",
+          price: "1399",
+          selling_price: "699",
+          quantity: "17",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520732920/665/8903520732920_1.webp",
+        },
+      },
+      variation: {
+        3: {
+          id_product: "113",
+          sku: "8903520732920",
+          color: "White",
+          url_key: "mi-signature-baseball-shirt-8903520732920",
+          configrable_atribute_value: "S",
+          price: "1399",
+          selling_price: "699",
+          quantity: "17",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520732920/665/8903520732920_1.webp",
+        },
+        4: {
+          id_product: "114",
+          sku: "8903520732937",
+          color: "White",
+          url_key: "mi-signature-baseball-shirt-8903520732937",
+          configrable_atribute_value: "M",
+          price: "1399",
+          selling_price: "699",
+          quantity: "51",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520732937/300/8903520732920_1.webp",
+        },
+        6: {
+          id_product: "116",
+          sku: "8903520732951",
+          color: "White",
+          url_key: "mi-signature-baseball-shirt-8903520732951",
+          configrable_atribute_value: "XL",
+          price: "1399",
+          selling_price: "699",
+          quantity: "74",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520732951/300/8903520732920_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "2384",
+      id_catetory: "7",
+      id_product: "273",
+      created_at: "2022-04-15 18:39:55",
+      updated_at: "2022-06-18 18:28:03",
+      source_product_id: "273",
+      parent_id: "0",
+      sku: "8903520776368",
+      name: "MI: Women's Varsity Crop Top - White",
+      price: "999",
+      selling_price: "499",
+      discount: "50",
+      stock_status: "in-stock",
+      quantity: "58",
+      status: "active",
+      breadcrumb: null,
+      visibility: "show",
+      description:
+        "Mumbai Indians have a record number of 5 IPL title wins! Cheer on as they march. Wear this and flaunt your love for the Men in Blues!",
+      image: "https://mumbaiindians.gumlet.io/product/8903520776368/300/1.jpg",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "mi-womens-varsity-crop-top-white-8903520776368",
+      meta_title: "MI: Women's Varsity Crop Top - White",
+      meta_description: "MI: Women's Varsity Crop Top - White",
+      meta_keyword: "MI: Women's Varsity Crop Top - White",
+      fynd_update: "2022-06-18 18:28:03",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/8903520776368/665/2.jpg",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Women",
+      fynd_uid: "8201285",
+      group_id: "8201285",
+      fynd_item_code: "MI122WCT020",
+      collection_page: "",
+      color_family: "White",
+      style_name: "MI: Women's Varsity Crop Top - White",
+      product_code: "MI122WCT020",
+      material: "",
+      product_type: "",
+      product_position: "0",
+      main_category: "Top Wear",
+      sub_category: "T-shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "",
+      color: "White",
+      size: "S",
+      fynd_size: "S",
+      best_seller: "",
+      name_of_the_commodity: "T-Shirt",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "127",
+      available_colors: "White",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        White: {
+          id_product: "273",
+          sku: "8903520776368",
+          color: "White",
+          url_key: "mi-womens-varsity-crop-top-white-8903520776368",
+          configrable_atribute_value: "S",
+          price: "999",
+          selling_price: "499",
+          quantity: "58",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520776368/665/1.jpg",
+        },
+      },
+      variation: {
+        3: {
+          id_product: "273",
+          sku: "8903520776368",
+          color: "White",
+          url_key: "mi-womens-varsity-crop-top-white-8903520776368",
+          configrable_atribute_value: "S",
+          price: "999",
+          selling_price: "499",
+          quantity: "58",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520776368/665/1.jpg",
+        },
+        4: {
+          id_product: "274",
+          sku: "8903520776375",
+          color: "White",
+          url_key: "mi-womens-varsity-crop-top-white-8903520776375",
+          configrable_atribute_value: "M",
+          price: "999",
+          selling_price: "499",
+          quantity: "69",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520776375/300/1.jpg",
+        },
+      },
+    },
+    {
+      id_product_category: "1101",
+      id_catetory: "7",
+      id_product: "28",
+      created_at: "2022-02-08 10:48:34",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "28",
+      parent_id: "0",
+      sku: "MITS223LG",
+      name: "MI: Gateway to Cricket",
+      price: "999",
+      selling_price: "999",
+      discount: "0",
+      stock_status: "in-stock",
+      quantity: "1",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Gateway to Cricket","url_key":"t-shirts-mits223lg"}]',
+      visibility: "show",
+      description:
+        "Check out the official IPL team MI MI: Gateway to Cricket T-Shirts on FanCode. Get yourself the official Mumbai Indians and other IPL merchandise on offer.",
+      image:
+        "https://mumbaiindians.gumlet.io/product/MITS223LG/300/MITS223_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "t-shirts-mits223lg",
+      meta_title: "T-Shirts",
+      meta_description: "T-Shirts",
+      meta_keyword: "T-Shirts",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/MITS223LG/665/MITS223_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Unisex",
+      fynd_uid: "8071049",
+      group_id: "8071049",
+      fynd_item_code: "MITS223",
+      collection_page: "",
+      color_family: "Blue",
+      style_name: "T-Shirts",
+      product_code: "MITS223LG",
+      material: "100% Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Clothing",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "Fancode",
+      color: "Blue",
+      size: "L",
+      fynd_size: "L",
+      best_seller: "",
+      name_of_the_commodity: "CLOTHING",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "2",
+      available_colors: "Blue",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        Blue: {
+          id_product: "28",
+          sku: "MITS223LG",
+          color: "Blue",
+          url_key: "t-shirts-mits223lg",
+          configrable_atribute_value: "L",
+          price: "999",
+          selling_price: "999",
+          quantity: "1",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS223LG/665/MITS223_1.webp",
+        },
+      },
+      variation: {
+        5: {
+          id_product: "28",
+          sku: "MITS223LG",
+          color: "Blue",
+          url_key: "t-shirts-mits223lg",
+          configrable_atribute_value: "L",
+          price: "999",
+          selling_price: "999",
+          quantity: "1",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS223LG/665/MITS223_1.webp",
+        },
+        7: {
+          id_product: "30",
+          sku: "MITS2232X",
+          color: "Blue",
+          url_key: "t-shirts-mits2232x",
+          configrable_atribute_value: "XXL",
+          price: "999",
+          selling_price: "999",
+          quantity: "1",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2232X/300/MITS223_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "1077",
+      id_catetory: "7",
+      id_product: "108",
+      created_at: "2022-03-08 13:58:17",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "108",
+      parent_id: "0",
+      sku: "8903520732821",
+      name: "MI Camo Print Cut and Sew Henley",
+      price: "1199",
+      selling_price: "599",
+      discount: "50",
+      stock_status: "in-stock",
+      quantity: "13",
+      status: "active",
+      breadcrumb: null,
+      visibility: "show",
+      description:
+        "Mumbai Indians have a record number of 5 IPL title wins! Cheer on the reigning champions as they march on to defend their title this season with official Mumbai Indians merchandise exclusively at The Arena. Introducing the Official Replica Merchandise. Wear this and flaunt your love for the Men in Blues!",
+      image:
+        "https://mumbaiindians.gumlet.io/product/8903520732821/300/8903520732821_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "mi-camo-print-cut-and-sew-henley-8903520732821",
+      meta_title: "MI Camo Print Cut and Sew Henley",
+      meta_description: "MI Camo Print Cut and Sew Henley",
+      meta_keyword: "MI Camo Print Cut and Sew Henley",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/8903520732821/665/8903520732821_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Unisex",
+      fynd_uid: "8082212",
+      group_id: "8082212",
+      fynd_item_code: "MI121MT004",
+      collection_page: "",
+      color_family: "",
+      style_name: "MI Camo Print Cut and Sew Henley",
+      product_code: "MI121MT004",
+      material: "Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Top Wear",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "",
+      color: "Blue",
+      size: "S",
+      fynd_size: "S",
+      best_seller: null,
+      name_of_the_commodity: "Clothing",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "13",
+      available_colors: "Blue",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        Blue: {
+          id_product: "108",
+          sku: "8903520732821",
+          color: "Blue",
+          url_key: "mi-camo-print-cut-and-sew-henley-8903520732821",
+          configrable_atribute_value: "S",
+          price: "1199",
+          selling_price: "599",
+          quantity: "13",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520732821/665/8903520732821_1.webp",
+        },
+      },
+      variation: {
+        3: {
+          id_product: "108",
+          sku: "8903520732821",
+          color: "Blue",
+          url_key: "mi-camo-print-cut-and-sew-henley-8903520732821",
+          configrable_atribute_value: "S",
+          price: "1199",
+          selling_price: "599",
+          quantity: "13",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520732821/665/8903520732821_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "1032",
+      id_catetory: "7",
+      id_product: "86",
+      created_at: "2022-02-21 11:59:24",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "86",
+      parent_id: "0",
+      sku: "8903520732722",
+      name: "MI Signature Print T-Shirt",
+      price: "999",
+      selling_price: "499",
+      discount: "50",
+      stock_status: "in-stock",
+      quantity: "9",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Signature Print T-Shirt","url_key":"mi-signature-print-t-shirt-8903520732722"}]',
+      visibility: "show",
+      description:
+        "Mumbai Indians have a record number of 5 IPL title wins! Cheer on the reigning champions as they march on to defend their title this season with official Mumbai Indians merchandise exclusively at The Arena. Introducing the Official Replica Merchandise. Wear this and flaunt your love for the Men in Blues!",
+      image:
+        "https://mumbaiindians.gumlet.io/product/8903520732722/300/8903520732722_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "mi-signature-print-t-shirt-8903520732722",
+      meta_title: "MI Signature Print T-Shirt",
+      meta_description: "MI Signature Print T-Shirt",
+      meta_keyword: "MI Signature Print T-Shirt",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/8903520732722/665/8903520732722_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Unisex",
+      fynd_uid: "8082214",
+      group_id: "8082214",
+      fynd_item_code: "MI121MT002",
+      collection_page: "",
+      color_family: "",
+      style_name: "MI Signature Print T-Shirt",
+      product_code: "MI121MT002",
+      material: "Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Top Wear",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "",
+      color: "Blue",
+      size: "S",
+      fynd_size: "S",
+      best_seller: "",
+      name_of_the_commodity: "Clothing",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "9",
+      available_colors: "Blue",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        Blue: {
+          id_product: "86",
+          sku: "8903520732722",
+          color: "Blue",
+          url_key: "mi-signature-print-t-shirt-8903520732722",
+          configrable_atribute_value: "S",
+          price: "999",
+          selling_price: "499",
+          quantity: "9",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520732722/665/8903520732722_1.webp",
+        },
+      },
+      variation: {
+        3: {
+          id_product: "86",
+          sku: "8903520732722",
+          color: "Blue",
+          url_key: "mi-signature-print-t-shirt-8903520732722",
+          configrable_atribute_value: "S",
+          price: "999",
+          selling_price: "499",
+          quantity: "9",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/8903520732722/665/8903520732722_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "1209",
+      id_catetory: "7",
+      id_product: "77",
+      created_at: "2022-02-08 10:50:14",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "77",
+      parent_id: "0",
+      sku: "MITS203ET",
+      name: "MI: Kids T-shirt (Batsman Graphic)",
+      price: "799",
+      selling_price: "799",
+      discount: "0",
+      stock_status: "in-stock",
+      quantity: "2",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Kids T-shirt Batsman Graphic","url_key":"t-shirts-mits203et"}]',
+      visibility: "show",
+      description:
+        "Check out the official IPL team MI MI: Kids T-shirt (Batsman Graphic) T-Shirts on FanCode. Get yourself the official Mumbai Indians and other IPL merchandise on offer.",
+      image:
+        "https://mumbaiindians.gumlet.io/product/MITS203ET/300/MITS203_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "t-shirts-mits203et",
+      meta_title: "T-Shirts",
+      meta_description: "T-Shirts",
+      meta_keyword: "T-Shirts",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/MITS203ET/665/MITS203_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Boys",
+      fynd_uid: "8071040",
+      group_id: "8071040",
+      fynd_item_code: "MITS203",
+      collection_page: "",
+      color_family: "Blue",
+      style_name: "T-Shirts",
+      product_code: "MITS203ET",
+      material: "100% Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Clothing",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "Fancode",
+      color: "Blue",
+      size: "8Y",
+      fynd_size: "8Y",
+      best_seller: "",
+      name_of_the_commodity: "CLOTHING",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "6",
+      available_colors: "Blue",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        Blue: {
+          id_product: "77",
+          sku: "MITS203ET",
+          color: "Blue",
+          url_key: "t-shirts-mits203et",
+          configrable_atribute_value: "8Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "2",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS203ET/665/MITS203_1.webp",
+        },
+      },
+      variation: {
+        1: {
+          id_product: "77",
+          sku: "MITS203ET",
+          color: "Blue",
+          url_key: "t-shirts-mits203et",
+          configrable_atribute_value: "8Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "2",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS203ET/665/MITS203_1.webp",
+        },
+        2: {
+          id_product: "79",
+          sku: "MITS203TW",
+          color: "Blue",
+          url_key: "t-shirts-mits203tw",
+          configrable_atribute_value: "12Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "1",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS203TW/300/MITS203_1.webp",
+        },
+        3: {
+          id_product: "80",
+          sku: "MITS203FT",
+          color: "Blue",
+          url_key: "t-shirts-mits203ft",
+          configrable_atribute_value: "14Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "3",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS203FT/300/MITS203_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "1194",
+      id_catetory: "7",
+      id_product: "73",
+      created_at: "2022-02-08 10:50:06",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "73",
+      parent_id: "0",
+      sku: "MITS218MD",
+      name: "MI: Men's T-shirt (Dark Blue and White Panels)",
+      price: "899",
+      selling_price: "899",
+      discount: "0",
+      stock_status: "in-stock",
+      quantity: "19",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Mens T-shirt Dark Blue and White Panels","url_key":"t-shirts-mits218md"}]',
+      visibility: "show",
+      description:
+        "Check out the official IPL team MI MI: Men's T-shirt (Dark Blue and White Panels) T-Shirts on FanCode. Get yourself the official Mumbai Indians and other IPL merchandise on offer.",
+      image:
+        "https://mumbaiindians.gumlet.io/product/MITS218MD/300/MITS218_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "t-shirts-mits218md",
+      meta_title: "T-Shirts",
+      meta_description: "T-Shirts",
+      meta_keyword: "T-Shirts",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/MITS218MD/665/MITS218_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Boys",
+      fynd_uid: "8071042",
+      group_id: "8071042",
+      fynd_item_code: "MITS218",
+      collection_page: "",
+      color_family: "White",
+      style_name: "T-Shirts",
+      product_code: "MITS218MD",
+      material: "100% Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Clothing",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "Fancode",
+      color: "White",
+      size: "M",
+      fynd_size: "M",
+      best_seller: "",
+      name_of_the_commodity: "CLOTHING",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "77",
+      available_colors: "White",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        White: {
+          id_product: "73",
+          sku: "MITS218MD",
+          color: "White",
+          url_key: "t-shirts-mits218md",
+          configrable_atribute_value: "M",
+          price: "899",
+          selling_price: "899",
+          quantity: "19",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS218MD/665/MITS218_1.webp",
+        },
+      },
+      variation: {
+        4: {
+          id_product: "73",
+          sku: "MITS218MD",
+          color: "White",
+          url_key: "t-shirts-mits218md",
+          configrable_atribute_value: "M",
+          price: "899",
+          selling_price: "899",
+          quantity: "19",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS218MD/665/MITS218_1.webp",
+        },
+        5: {
+          id_product: "74",
+          sku: "MITS218LG",
+          color: "White",
+          url_key: "t-shirts-mits218lg",
+          configrable_atribute_value: "L",
+          price: "899",
+          selling_price: "899",
+          quantity: "19",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS218LG/300/MITS218_1.webp",
+        },
+        6: {
+          id_product: "75",
+          sku: "MITS2181X",
+          color: "White",
+          url_key: "t-shirts-mits2181x",
+          configrable_atribute_value: "XL",
+          price: "899",
+          selling_price: "899",
+          quantity: "2",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2181X/300/MITS218_1.webp",
+        },
+        7: {
+          id_product: "76",
+          sku: "MITS2183X",
+          color: "White",
+          url_key: "t-shirts-mits2183x",
+          configrable_atribute_value: "XXXL",
+          price: "899",
+          selling_price: "899",
+          quantity: "37",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2183X/300/MITS218_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "624",
+      id_catetory: "7",
+      id_product: "68",
+      created_at: "2022-02-08 10:49:57",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "68",
+      parent_id: "0",
+      sku: "MITS202ET",
+      name: "MI: Kids T-shirt (Three Panels)",
+      price: "899",
+      selling_price: "899",
+      discount: "0",
+      stock_status: "in-stock",
+      quantity: "3",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Kids T-shirt Three Panels","url_key":"t-shirts-mits202et"}]',
+      visibility: "show",
+      description:
+        "Check out the official IPL team MI MI: Kids T-shirt (Three Panels) T-Shirts on FanCode. Get yourself the official Mumbai Indians and other IPL merchandise on offer.",
+      image:
+        "https://mumbaiindians.gumlet.io/product/MITS202ET/300/MITS202_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "t-shirts-mits202et",
+      meta_title: "T-Shirts",
+      meta_description: "T-Shirts",
+      meta_keyword: "T-Shirts",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/MITS202ET/665/MITS202_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Boys",
+      fynd_uid: "8071045",
+      group_id: "8071045",
+      fynd_item_code: "MITS202",
+      collection_page: "",
+      color_family: "Navy Blue",
+      style_name: "T-Shirts",
+      product_code: "MITS202ET",
+      material: "100% Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Clothing",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "Fancode",
+      color: "Navy Blue",
+      size: "8Y",
+      fynd_size: "8Y",
+      best_seller: "",
+      name_of_the_commodity: "CLOTHING",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "34",
+      available_colors: "Navy Blue",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        "Navy Blue": {
+          id_product: "68",
+          sku: "MITS202ET",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits202et",
+          configrable_atribute_value: "8Y",
+          price: "899",
+          selling_price: "899",
+          quantity: "3",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS202ET/665/MITS202_1.webp",
+        },
+      },
+      variation: {
+        1: {
+          id_product: "68",
+          sku: "MITS202ET",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits202et",
+          configrable_atribute_value: "8Y",
+          price: "899",
+          selling_price: "899",
+          quantity: "3",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS202ET/665/MITS202_1.webp",
+        },
+        2: {
+          id_product: "69",
+          sku: "MITS202TN",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits202tn",
+          configrable_atribute_value: "10Y",
+          price: "899",
+          selling_price: "899",
+          quantity: "9",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS202TN/300/MITS202_1.webp",
+        },
+        3: {
+          id_product: "70",
+          sku: "MITS202TW",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits202tw",
+          configrable_atribute_value: "12Y",
+          price: "899",
+          selling_price: "899",
+          quantity: "13",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS202TW/300/MITS202_1.webp",
+        },
+        4: {
+          id_product: "71",
+          sku: "MITS202FT",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits202ft",
+          configrable_atribute_value: "14Y",
+          price: "899",
+          selling_price: "899",
+          quantity: "9",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS202FT/300/MITS202_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "616",
+      id_catetory: "7",
+      id_product: "64",
+      created_at: "2022-02-08 10:49:50",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "64",
+      parent_id: "0",
+      sku: "MITS201ET",
+      name: "MI: Kids T-shirt (White Stripe)",
+      price: "799",
+      selling_price: "799",
+      discount: "0",
+      stock_status: "in-stock",
+      quantity: "17",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Kids T-shirt White Stripe","url_key":"t-shirts-mits201et"}]',
+      visibility: "show",
+      description:
+        "Check out the official IPL team MI MI: Kids T-shirt (White Stripe) T-Shirts on FanCode. Get yourself the official Mumbai Indians and other IPL merchandise on offer.",
+      image:
+        "https://mumbaiindians.gumlet.io/product/MITS201ET/300/MITS201_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "t-shirts-mits201et",
+      meta_title: "T-Shirts",
+      meta_description: "T-Shirts",
+      meta_keyword: "T-Shirts",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/MITS201ET/665/MITS201_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Boys",
+      fynd_uid: "8071039",
+      group_id: "8071039",
+      fynd_item_code: "MITS201",
+      collection_page: "",
+      color_family: "Blue",
+      style_name: "T-Shirts",
+      product_code: "MITS201ET",
+      material: "100% Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Clothing",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "Fancode",
+      color: "Blue",
+      size: "8Y",
+      fynd_size: "8Y",
+      best_seller: "",
+      name_of_the_commodity: "CLOTHING",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "65",
+      available_colors: "Blue",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        Blue: {
+          id_product: "64",
+          sku: "MITS201ET",
+          color: "Blue",
+          url_key: "t-shirts-mits201et",
+          configrable_atribute_value: "8Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "17",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS201ET/665/MITS201_1.webp",
+        },
+      },
+      variation: {
+        1: {
+          id_product: "64",
+          sku: "MITS201ET",
+          color: "Blue",
+          url_key: "t-shirts-mits201et",
+          configrable_atribute_value: "8Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "17",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS201ET/665/MITS201_1.webp",
+        },
+        2: {
+          id_product: "65",
+          sku: "MITS201TN",
+          color: "Blue",
+          url_key: "t-shirts-mits201tn",
+          configrable_atribute_value: "10Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "16",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS201TN/300/MITS201_1.webp",
+        },
+        3: {
+          id_product: "66",
+          sku: "MITS201TW",
+          color: "Blue",
+          url_key: "t-shirts-mits201tw",
+          configrable_atribute_value: "12Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "19",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS201TW/300/MITS201_1.webp",
+        },
+        4: {
+          id_product: "67",
+          sku: "MITS201FT",
+          color: "Blue",
+          url_key: "t-shirts-mits201ft",
+          configrable_atribute_value: "14Y",
+          price: "799",
+          selling_price: "799",
+          quantity: "13",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS201FT/300/MITS201_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "604",
+      id_catetory: "7",
+      id_product: "58",
+      created_at: "2022-02-08 10:49:35",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "58",
+      parent_id: "0",
+      sku: "MITS207SM",
+      name: "MI: Men's T-shirt (Three Panels)",
+      price: "999",
+      selling_price: "999",
+      discount: "0",
+      stock_status: "in-stock",
+      quantity: "4",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Mens T-shirt Three Panels","url_key":"t-shirts-mits207sm"}]',
+      visibility: "show",
+      description:
+        "Check out the official IPL team MI MI: Men's T-shirt (Three Panels) T-Shirts on FanCode. Get yourself the official Mumbai Indians and other IPL merchandise on offer.",
+      image:
+        "https://mumbaiindians.gumlet.io/product/MITS207SM/300/MITS207_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "t-shirts-mits207sm",
+      meta_title: "T-Shirts",
+      meta_description: "T-Shirts",
+      meta_keyword: "T-Shirts",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/MITS207SM/665/MITS207_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Unisex",
+      fynd_uid: "8071041",
+      group_id: "8071041",
+      fynd_item_code: "MITS207",
+      collection_page: "",
+      color_family: "Navy Blue",
+      style_name: "T-Shirts",
+      product_code: "MITS207SM",
+      material: "100% Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Clothing",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "Fancode",
+      color: "Navy Blue",
+      size: "S",
+      fynd_size: "S",
+      best_seller: "",
+      name_of_the_commodity: "CLOTHING",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "43",
+      available_colors: "Navy Blue",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        "Navy Blue": {
+          id_product: "58",
+          sku: "MITS207SM",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits207sm",
+          configrable_atribute_value: "S",
+          price: "999",
+          selling_price: "999",
+          quantity: "4",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS207SM/665/MITS207_1.webp",
+        },
+      },
+      variation: {
+        3: {
+          id_product: "58",
+          sku: "MITS207SM",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits207sm",
+          configrable_atribute_value: "S",
+          price: "999",
+          selling_price: "999",
+          quantity: "4",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS207SM/665/MITS207_1.webp",
+        },
+        4: {
+          id_product: "59",
+          sku: "MITS207MD",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits207md",
+          configrable_atribute_value: "M",
+          price: "999",
+          selling_price: "999",
+          quantity: "2",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS207MD/300/MITS207_1.webp",
+        },
+        5: {
+          id_product: "60",
+          sku: "MITS207LG",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits207lg",
+          configrable_atribute_value: "L",
+          price: "999",
+          selling_price: "999",
+          quantity: "17",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS207LG/300/MITS207_1.webp",
+        },
+        6: {
+          id_product: "61",
+          sku: "MITS2071X",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits2071x",
+          configrable_atribute_value: "XL",
+          price: "999",
+          selling_price: "999",
+          quantity: "6",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2071X/300/MITS207_1.webp",
+        },
+        7: {
+          id_product: "63",
+          sku: "MITS2073X",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits2073x",
+          configrable_atribute_value: "XXXL",
+          price: "999",
+          selling_price: "999",
+          quantity: "14",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2073X/300/MITS207_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "1167",
+      id_catetory: "7",
+      id_product: "53",
+      created_at: "2022-02-08 10:49:26",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "53",
+      parent_id: "0",
+      sku: "MITS220SM",
+      name: "MI: Women's T-shirt (Three Panels)",
+      price: "899",
+      selling_price: "899",
+      discount: "0",
+      stock_status: "in-stock",
+      quantity: "14",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Womens T-shirt Three Panels","url_key":"t-shirts-mits220sm"}]',
+      visibility: "show",
+      description:
+        "Check out the official IPL team MI MI: Women's T-shirt (Three Panels) T-Shirts on FanCode. Get yourself the official Mumbai Indians and other IPL merchandise on offer.",
+      image:
+        "https://mumbaiindians.gumlet.io/product/MITS220SM/300/MITS220_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "t-shirts-mits220sm",
+      meta_title: "T-Shirts",
+      meta_description: "T-Shirts",
+      meta_keyword: "T-Shirts",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/MITS220SM/665/MITS220_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Women",
+      fynd_uid: "8071047",
+      group_id: "8071047",
+      fynd_item_code: "MITS220",
+      collection_page: "",
+      color_family: "White",
+      style_name: "T-Shirts",
+      product_code: "MITS220SM",
+      material: "100% Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Clothing",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "Fancode",
+      color: "White",
+      size: "S",
+      fynd_size: "S",
+      best_seller: null,
+      name_of_the_commodity: "CLOTHING",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "168",
+      available_colors: "White",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        White: {
+          id_product: "53",
+          sku: "MITS220SM",
+          color: "White",
+          url_key: "t-shirts-mits220sm",
+          configrable_atribute_value: "S",
+          price: "899",
+          selling_price: "899",
+          quantity: "14",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS220SM/665/MITS220_1.webp",
+        },
+      },
+      variation: {
+        3: {
+          id_product: "53",
+          sku: "MITS220SM",
+          color: "White",
+          url_key: "t-shirts-mits220sm",
+          configrable_atribute_value: "S",
+          price: "899",
+          selling_price: "899",
+          quantity: "14",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS220SM/665/MITS220_1.webp",
+        },
+        4: {
+          id_product: "54",
+          sku: "MITS220MD",
+          color: "White",
+          url_key: "t-shirts-mits220md",
+          configrable_atribute_value: "M",
+          price: "899",
+          selling_price: "899",
+          quantity: "32",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS220MD/300/MITS220_1.webp",
+        },
+        5: {
+          id_product: "55",
+          sku: "MITS220LG",
+          color: "White",
+          url_key: "t-shirts-mits220lg",
+          configrable_atribute_value: "L",
+          price: "899",
+          selling_price: "899",
+          quantity: "52",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS220LG/300/MITS220_1.webp",
+        },
+        6: {
+          id_product: "56",
+          sku: "MITS2201X",
+          color: "White",
+          url_key: "t-shirts-mits2201x",
+          configrable_atribute_value: "XL",
+          price: "899",
+          selling_price: "899",
+          quantity: "45",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2201X/300/MITS220_1.webp",
+        },
+        7: {
+          id_product: "57",
+          sku: "MITS2202X",
+          color: "White",
+          url_key: "t-shirts-mits2202x",
+          configrable_atribute_value: "XXL",
+          price: "899",
+          selling_price: "899",
+          quantity: "25",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2202X/300/MITS220_1.webp",
+        },
+      },
+    },
+    {
+      id_product_category: "1182",
+      id_catetory: "7",
+      id_product: "48",
+      created_at: "2022-02-08 10:49:17",
+      updated_at: "2022-06-18 18:29:02",
+      source_product_id: "48",
+      parent_id: "0",
+      sku: "MITS210SM",
+      name: "MI: Women's T-shirt (Three Panels)",
+      price: "899",
+      selling_price: "899",
+      discount: "0",
+      stock_status: "in-stock",
+      quantity: "2",
+      status: "active",
+      breadcrumb:
+        '[{"name":"Top Wear","url_key":"top-wear"},{"name":"T-shirts","url_key":"top-wear-t-shirts"},{"name":"MI Womens T-shirt Three Panels","url_key":"t-shirts-mits210sm"}]',
+      visibility: "show",
+      description:
+        "Check out the official IPL team MI MI: Women's T-shirt (Three Panels) T-Shirts on FanCode. Get yourself the official Mumbai Indians and other IPL merchandise on offer.",
+      image:
+        "https://mumbaiindians.gumlet.io/product/MITS210SM/300/MITS210_1.webp",
+      configrable_atribute_code: "size",
+      configrable_atribute_value: "",
+      has_child: "no",
+      url_key: "t-shirts-mits210sm",
+      meta_title: "T-Shirts",
+      meta_description: "T-Shirts",
+      meta_keyword: "T-Shirts",
+      fynd_update: "2022-06-18 18:29:02",
+      hover_image:
+        "https://mumbaiindians.gumlet.io/product/MITS210SM/665/MITS210_2.webp",
+      combo_product: null,
+      cod_block: null,
+      hsn: "61091000",
+      gender: "Women",
+      fynd_uid: "8071048",
+      group_id: "8071048",
+      fynd_item_code: "MITS210",
+      collection_page: "",
+      color_family: "Navy Blue",
+      style_name: "T-Shirts",
+      product_code: "MITS210SM",
+      material: "100% Cotton",
+      product_type: "Round Neck",
+      product_position: "0",
+      main_category: "Clothing",
+      sub_category: "T-Shirts",
+      "sub_category-2": "",
+      size_chart: null,
+      google_product_category: null,
+      brand: "Fancode",
+      color: "Navy Blue",
+      size: "S",
+      fynd_size: "S",
+      best_seller: "",
+      name_of_the_commodity: "CLOTHING",
+      you_may_like: null,
+      store: "1",
+      "SUM(pim_flat_catalog.quantity)": "129",
+      available_colors: "Navy Blue",
+      category: "",
+      review_rating: {
+        reviews: [],
+        total_review: 0,
+        average_rating: 0,
+      },
+      color_variation: {
+        "Navy Blue": {
+          id_product: "48",
+          sku: "MITS210SM",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits210sm",
+          configrable_atribute_value: "S",
+          price: "899",
+          selling_price: "899",
+          quantity: "2",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS210SM/665/MITS210_1.webp",
+        },
+      },
+      variation: {
+        3: {
+          id_product: "48",
+          sku: "MITS210SM",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits210sm",
+          configrable_atribute_value: "S",
+          price: "899",
+          selling_price: "899",
+          quantity: "2",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS210SM/665/MITS210_1.webp",
+        },
+        4: {
+          id_product: "49",
+          sku: "MITS210MD",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits210md",
+          configrable_atribute_value: "M",
+          price: "899",
+          selling_price: "899",
+          quantity: "24",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS210MD/300/MITS210_1.webp",
+        },
+        5: {
+          id_product: "50",
+          sku: "MITS210LG",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits210lg",
+          configrable_atribute_value: "L",
+          price: "899",
+          selling_price: "899",
+          quantity: "43",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS210LG/300/MITS210_1.webp",
+        },
+        6: {
+          id_product: "51",
+          sku: "MITS2101X",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits2101x",
+          configrable_atribute_value: "XL",
+          price: "899",
+          selling_price: "899",
+          quantity: "36",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2101X/300/MITS210_1.webp",
+        },
+        7: {
+          id_product: "52",
+          sku: "MITS2102X",
+          color: "Navy Blue",
+          url_key: "t-shirts-mits2102x",
+          configrable_atribute_value: "XXL",
+          price: "899",
+          selling_price: "899",
+          quantity: "24",
+          stock_status: "in-stock",
+          image:
+            "https://mumbaiindians.gumlet.io/product/MITS2102X/300/MITS210_1.webp",
+        },
+      },
+    },
+  ];
+  const [checkout, setcheckout] = useState(false);
+  const [cart, setcart] = useState(0);
+  const [cartitems, setcartitems] = useState([]);
+  function onClickHandler(item) {
+    setcart((prev) => prev + 1);
+    setcartitems((prev) => [...prev, item]);
+  }
+  function handleRemove(itemId) {
+    setcart((prev) => prev - 1);
+    console.log(cart);
+    let index = cartitems.findIndex((item) => item.id === itemId);
+    if (index) {
+      let newcart = cartitems.slice(index, 1);
+      setcartitems(newcart);
+    }
+  }
+  return (
+    <div className={styles.shops}>
+      <div className={styles.bg}>
+        <img src="https://i.ibb.co/1zFGLBc/Wankhede-ICC-WCF.jpg" alt="" />
+      </div>
+
+      <Header />
+
+      <div className={styles.main}>
+        {checkout && (
+          <Checkout
+            cartitems={cartitems}
+            setcartitems={setcartitems}
+            setcart={setcart}
+            setshowmenu={setcheckout}
+          />
+        )}
+        <div className={styles.swapper}>
+          <p
+            className={` ${selected === 0 && styles.selected}`}
+            onClick={() => setselected(0)}
+          >
+            Fan shop
+          </p>
+
+          <p
+            className={` ${selected === 1 && styles.selected}`}
+            onClick={() => setselected(1)}
+          >
+            Stadium shop
+          </p>
+        </div>
+        {selected === 0 ? (
+          <>
+            <p className={styles.heroheading}>Jersey</p>
+            <div className={styles.wrapper}>
+              <Slider {...settings}>
+                {playerData.map((item) => (
+                  <ShopItem key={item.id} name={item.name} />
+                ))}
+              </Slider>
+            </div>
+            <p className={styles.heroheading}>Special Collection</p>
+            <div className={styles.wrapper2} style={{ marginTop: 20 }}>
+              <Slider {...settings}>
+                {products.map((item) => (
+                  <ShopItem key={item.id} data={item} />
+                ))}
+              </Slider>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={styles.heroheading}>Order now ! </div>
+            <div className={styles.cart} onClick={() => setcheckout(true)}>
+              <LocalMallIcon />
+              {cart} items
+            </div>
+            <div className={styles.foodWrapper}>
+              <div className={styles.col}>
+                <p className={styles.head}>#Food</p>
+                <div className={styles.scroll}>
+                  {meals.map((item) => {
+                    return (
+                      <MenuItem
+                        key={item.id}
+                        handleRemove={handleRemove}
+                        data={item.menu}
+                        handleClick={onClickHandler}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+              <div className={styles.col}>
+                <p className={styles.head}>#Drinks</p>
+                <div className={styles.scroll}>
+                  {drinks.map((item) => {
+                    return (
+                      <MenuItem
+                        key={item.id}
+                        data={item.menu}
+                        handleClick={onClickHandler}
+                        handleRemove={handleRemove}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import { getMatches } from "../api/api";
-import MyCard from "./MyCard";
-import { Container, Grid} from "@material-ui/core";
+import MyCard from "../components/MatchCard";
+import { Container, Grid } from "@material-ui/core";
 
 const Results = () => {
-    const [matches, setMatches] = useState([]);
+  const [matches, setMatches] = useState([]);
 
   useEffect(() => {
     getMatches()
@@ -18,15 +18,20 @@ const Results = () => {
 
   return (
     <Container>
-    <Grid container>
-      <Grid item xs={12}>
-        {matches.map((match) => (
-           match.status !== "Match not started" ? <MyCard match={match}></MyCard> : <></>
-        ))}
+      asd
+      <Grid container>
+        <Grid item xs={12}>
+          {matches.map((match) =>
+            match.status !== "Match not started" ? (
+              <MyCard match={match}></MyCard>
+            ) : (
+              <></>
+            )
+          )}
+        </Grid>
       </Grid>
-    </Grid>
-  </Container>
-  )
-} 
+    </Container>
+  );
+};
 
 export default Results;

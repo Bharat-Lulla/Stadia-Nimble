@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 import {
   Button,
   Card,
@@ -16,58 +15,47 @@ import {
 } from "@material-ui/core";
 import { getMatchDetail } from "../api/api";
 
-import "./MyCard.scss"
-
-const MyCard = ({ match }) => {
+export default function MatchCard({ match }) {
   // console.log(match)
   const [detail, setDetail] = useState({});
   const [open, setOpen] = useState(false);
-
+  console.log(match);
   const getMatchCard = () => (
     <div>
-      <Card style={{
-          background: "#e2e2e2",
+      <Card
+        style={{
+          background: "#ffffff",
           marginTop: 15,
-        }}>
+          borderRadius: 12,
+        }}
+      >
         <CardContent>
           <Grid container justify="center" alignItems="center" spacing={4}>
             <Grid item>
-              <Typography variant="h5">{match.teams[0]}</Typography>
+              <Typography variant="h5">{match.participants[0].name}</Typography>
             </Grid>
             <Grid item>
               <img
                 style={{ width: 85 }}
-                src="./img/vs.png"
+                src={`https://www.mumbaiindians.com/static-assets/images/teams/2021/${match.participants[0].id}.png`}
                 alt=""
               />
             </Grid>
             <Grid item>
-              <Typography variant="h5">{match.teams[1]}</Typography>
+              <img style={{ width: 85 }} src={`/img/vs.png`} alt="" />
+            </Grid>
+            <Grid item>
+              <img
+                style={{ width: 85 }}
+                src={`https://www.mumbaiindians.com/static-assets/images/teams/2021/${match.participants[1].id}.png`}
+                alt=""
+              />
+            </Grid>
+            <Grid item>
+              <Typography variant="h5">{match.participants[1].name}</Typography>
             </Grid>
           </Grid>
         </CardContent>
-
-        <CardActions>
-          <Grid container justify="center">
-            {match.status!== "Match not started" ? 
-            <Button
-              onClick={() => {
-                showDetailBtnClicked(match["id"]);
-              }}
-              variant="outlined"
-              color="secondary"
-            >
-              Show Detail
-            </Button> : <></>}
-            <Button
-              style={{ marginLeft: 5 }}
-              variant="outlined"
-              color="primary"
-            >
-              Starting time {new Date(match.dateTimeGMT).toLocaleString()}
-            </Button>
-          </Grid>
-        </CardActions>
       </Card>
     </div>
   );
@@ -143,6 +131,4 @@ const MyCard = ({ match }) => {
       )}
     </>
   );
-};
-
-export default MyCard;
+}
